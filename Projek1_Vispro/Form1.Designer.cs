@@ -49,7 +49,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1.606426F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(86, 105);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(134, 117);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -82,7 +82,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Menu;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(250, 354);
+            this.button1.Location = new System.Drawing.Point(297, 370);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(511, 43);
             this.button1.TabIndex = 1;
@@ -94,7 +94,7 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Menu;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(250, 486);
+            this.button2.Location = new System.Drawing.Point(297, 502);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(511, 43);
             this.button2.TabIndex = 2;
@@ -106,7 +106,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(488, 430);
+            this.label3.Location = new System.Drawing.Point(535, 446);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 22);
             this.label3.TabIndex = 3;
@@ -116,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(526, 422);
+            this.label4.Location = new System.Drawing.Point(573, 438);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.label4.Size = new System.Drawing.Size(225, 30);
@@ -136,7 +136,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(257, 422);
+            this.label5.Location = new System.Drawing.Point(304, 438);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.label5.Size = new System.Drawing.Size(225, 30);
@@ -147,9 +147,9 @@
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Menu;
             this.button3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(876, 12);
+            this.button3.Location = new System.Drawing.Point(974, 12);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 34);
+            this.button3.Size = new System.Drawing.Size(115, 39);
             this.button3.TabIndex = 8;
             this.button3.Text = "Report";
             this.button3.UseVisualStyleBackColor = false;
@@ -160,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(996, 614);
+            this.ClientSize = new System.Drawing.Size(1101, 638);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
@@ -170,7 +170,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Landing_Page";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

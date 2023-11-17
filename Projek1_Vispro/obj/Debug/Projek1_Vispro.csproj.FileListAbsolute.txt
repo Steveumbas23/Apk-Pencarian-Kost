@@ -6,7 +6,6 @@ D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.csproj.A
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.Form1.resources
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.Form2.resources
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.Form3.resources
-D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.Form5.resources
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.Properties.Resources.resources
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.csproj.GenerateResource.cache
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.csproj.CoreCompileInputs.cache
@@ -32,3 +31,4 @@ D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\bin\Debug\CrystalDecisions.Report
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\bin\Debug\stdole.dll
 D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.Regist.resources
+D:\prakvnetfinal\Projek1_Vispro\Projek1_Vispro\obj\Debug\Projek1_Vispro.Menu_For_Users.resources

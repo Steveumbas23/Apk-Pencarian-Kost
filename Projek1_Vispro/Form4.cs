@@ -42,7 +42,7 @@ namespace Projek1_Vispro
 
         private void BTN_Insert_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO db_infokost.tbl_data(Id,Nama,Alamat,Harga,JenisKost) VALUES('"+textBoxID.Text+"','" + textBoxNameKost.Text + "', '" + textBoxAlamat.Text + "', '" + textBoxHarga.Text + "', '" + textBoxJenisKost.Text + "')";
+            string insertQuery = "INSERT INTO db_infokost.tbl_data(Id,Nama,Alamat,Harga,JenisKost,KataKunci) VALUES('"+textBoxID.Text+"','" + textBoxNameKost.Text + "', '" + textBoxAlamat.Text + "', '" + textBoxHarga.Text + "', '" + textBoxJenisKost.Text + "', '"+textBoxKataKunci.Text+"')";
             koneksi.Open();
             MySqlCommand command = new MySqlCommand(insertQuery, koneksi);
             try
@@ -89,7 +89,7 @@ namespace Projek1_Vispro
 
         private void BTN_UPDATED_Click(object sender, EventArgs e)
         {
-            string updateQuery = "UPDATE db_infokost.tbl_data SET Nama = '"+textBoxNameKost.Text+"', Alamat ='"+textBoxAlamat.Text+"', JenisKost ='"+ textBoxJenisKost.Text+"', Harga = "+int.Parse(textBoxHarga.Text)+" WHERE id="+int.Parse(textBoxID.Text);
+            string updateQuery = "UPDATE db_infokost.tbl_data SET Nama = '"+textBoxNameKost.Text+"', Alamat ='"+textBoxAlamat.Text+"', JenisKost ='"+ textBoxJenisKost.Text+"', KataKunci ='"+textBoxKataKunci.Text+"', Harga = "+int.Parse(textBoxHarga.Text)+" WHERE id="+int.Parse(textBoxID.Text);
 
             koneksi.Open();
             try
@@ -126,12 +126,25 @@ namespace Projek1_Vispro
                 textBoxAlamat.Text = mdr.GetString("Alamat");
                 textBoxHarga.Text = mdr.GetInt32("Harga").ToString();
                 textBoxJenisKost.Text = mdr.GetString("JenisKost");
+                textBoxKataKunci.Text = mdr.GetString("KataKunci");
             }
             else
             {
                 MessageBox.Show("No Data For This Id");
             }
             koneksi.Close();
+        }
+
+        private void BTN_CLEAR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Form4_Load(null, null);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -150,14 +163,23 @@ namespace Projek1_Vispro
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[0].Width = 30;
                 dataGridView1.Columns[0].HeaderText = "Id";
-                dataGridView1.Columns[1].Width = 100;
+                dataGridView1.Columns[1].Width = 150;
                 dataGridView1.Columns[1].HeaderText = "Nama";
-                dataGridView1.Columns[2].Width = 100;
+                dataGridView1.Columns[2].Width = 150;
                 dataGridView1.Columns[2].HeaderText = "Alamat";
-                dataGridView1.Columns[3].Width = 100;
+                dataGridView1.Columns[3].Width = 150;
                 dataGridView1.Columns[3].HeaderText = "Harga";
-                dataGridView1.Columns[4].Width = 100;
+                dataGridView1.Columns[4].Width = 150;
                 dataGridView1.Columns[4].HeaderText = "JenisKost";
+                dataGridView1.Columns[5].Width = 150;
+                dataGridView1.Columns[5].HeaderText = "KataKunci";
+
+                textBoxID.Clear();
+                textBoxNameKost.Clear();
+                textBoxAlamat.Clear();
+                textBoxHarga.Clear();
+                textBoxJenisKost.Clear();
+                textBoxKataKunci.Clear();
             }
             catch (Exception ex)
             {

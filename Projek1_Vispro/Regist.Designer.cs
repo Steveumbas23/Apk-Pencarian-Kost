@@ -28,9 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.CrystalReport1 = new Projek1_Vispro.CrystalReport();
+            this.CrystalReport2 = new Projek1_Vispro.CrystalReport();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(961, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nama";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1033, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(126, 26);
+            this.textBox1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1189, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(96, 37);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "View";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // crystalReportViewer1
             // 
@@ -41,18 +71,23 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReportSource = this.CrystalReport1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1066, 554);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1354, 736);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // Regist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 554);
+            this.ClientSize = new System.Drawing.Size(1354, 736);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Regist";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Regist";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -60,5 +95,9 @@
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private CrystalReport CrystalReport1;
+        private CrystalReport CrystalReport2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

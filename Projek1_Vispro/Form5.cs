@@ -12,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace Projek1_Vispro
 {
-    public partial class Form5 : Form
+    public partial class Menu_For_Users : Form
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -23,7 +23,7 @@ namespace Projek1_Vispro
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-        public Form5()
+        public Menu_For_Users()
         {
             alamat = "server=localhost; database=db_infokost; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -33,7 +33,7 @@ namespace Projek1_Vispro
 
         public void searchData(string valueToSearch)
         {
-            string query = "SELECT * FROM tbl_data WHERE CONCAT(`Id`, `Nama`, `Alamat`, `Harga`) like '%" + valueToSearch + "%'";
+            string query = "SELECT * FROM tbl_data WHERE CONCAT(`Id`, `Nama`, `Alamat`, `Harga`, 'JenisKost', 'KataKunci') like '%" + valueToSearch + "%'";
             command = new MySqlCommand(query, koneksi);
             adapter = new MySqlDataAdapter(command);
             table = new DataTable();
@@ -43,7 +43,7 @@ namespace Projek1_Vispro
 
         private void BTN_SEARCH_Click(object sender, EventArgs e)
         {
-            string valueToSearch = textBoxSearch.Text.ToString();
+            string valueToSearch = textBox1.Text.ToString();
             searchData(valueToSearch);
         }
 
@@ -69,6 +69,7 @@ namespace Projek1_Vispro
                 textBoxAlamat.Text = mdr.GetString("Alamat");
                 textBoxHarga.Text = mdr.GetInt32("Harga").ToString();
                 textBoxJenisKost.Text = mdr.GetString("JenisKost");
+                textBoxKataKunci.Text = mdr.GetString("KataKunci");
             }
             else
             {
@@ -81,7 +82,7 @@ namespace Projek1_Vispro
         {
             try
             {
-                Form5_Load(null, null);
+                Menu_For_Users_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -89,12 +90,7 @@ namespace Projek1_Vispro
             }
         }
 
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form5_Load(object sender, EventArgs e)
+        private void Menu_For_Users_Load(object sender, EventArgs e)
         {
             try
             {
@@ -110,23 +106,26 @@ namespace Projek1_Vispro
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[0].Width = 30;
                 dataGridView1.Columns[0].HeaderText = "Id";
-                dataGridView1.Columns[1].Width = 100;
+                dataGridView1.Columns[1].Width = 150;
                 dataGridView1.Columns[1].HeaderText = "Nama";
-                dataGridView1.Columns[2].Width = 100;
+                dataGridView1.Columns[2].Width = 150;
                 dataGridView1.Columns[2].HeaderText = "Alamat";
-                dataGridView1.Columns[3].Width = 100;
+                dataGridView1.Columns[3].Width = 150;
                 dataGridView1.Columns[3].HeaderText = "Harga";
-                dataGridView1.Columns[4].Width = 100;
+                dataGridView1.Columns[4].Width = 150;
                 dataGridView1.Columns[4].HeaderText = "JenisKost";
+                dataGridView1.Columns[5].Width = 150;
+                dataGridView1.Columns[5].HeaderText = "KataKunci";
 
-                textBoxSearch.Clear();
-                textBoxID.Clear();
+                searchData("");
+
+                textBox1.Clear();
                 textBoxNameKost.Clear();
+                textBoxID.Clear();
                 textBoxAlamat.Clear();
                 textBoxHarga.Clear();
                 textBoxJenisKost.Clear();
-
-                searchData("");
+                textBoxKataKunci.Clear();
             }
             catch (Exception ex)
             {

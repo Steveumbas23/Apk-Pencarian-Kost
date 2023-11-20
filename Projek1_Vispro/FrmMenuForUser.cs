@@ -4,8 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,7 +12,7 @@ using MySql.Data.MySqlClient;
 
 namespace Projek1_Vispro
 {
-    public partial class Form4 : Form
+    public partial class Menu_For_Users : Form
     {
         private MySqlConnection koneksi;
         private MySqlDataAdapter adapter;
@@ -25,7 +23,7 @@ namespace Projek1_Vispro
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-        public Form4()
+        public Menu_For_Users()
         {
             alamat = "server=localhost; database=db_infokost; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
@@ -33,82 +31,27 @@ namespace Projek1_Vispro
             InitializeComponent();
         }
 
+        public void searchData(string valueToSearch)
+        {
+            string query = "SELECT * FROM tbl_data WHERE CONCAT(`Id`, `Nama`, `Alamat`, `Harga`, `JenisKost`, `KataKunci`) like '%" + valueToSearch + "%'";
+            command = new MySqlCommand(query, koneksi);
+            adapter = new MySqlDataAdapter(command);
+            table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+        }
+
+        private void BTN_SEARCH_Click(object sender, EventArgs e)
+        {
+            string valueToSearch = textBox1.Text.ToString();
+            searchData(valueToSearch);
+        }
+
         private void BTN_BACK_Click(object sender, EventArgs e)
         {
-            Form1 form4 = new Form1();
-            form4.Show();
+            FrmLandingPage form5 = new FrmLandingPage();
+            form5.Show();
             this.Hide();
-        }
-
-        private void BTN_Insert_Click(object sender, EventArgs e)
-        {
-            string insertQuery = "INSERT INTO db_infokost.tbl_data(Id,Nama,Alamat,Harga,JenisKost,KataKunci) VALUES('"+textBoxID.Text+"','" + textBoxNameKost.Text + "', '" + textBoxAlamat.Text + "', '" + textBoxHarga.Text + "', '" + textBoxJenisKost.Text + "', '"+textBoxKataKunci.Text+"')";
-            koneksi.Open();
-            MySqlCommand command = new MySqlCommand(insertQuery, koneksi);
-            try
-            {
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Data Inserted");
-                }
-                else
-                {
-                    MessageBox.Show("Data Not Inserted");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            koneksi.Close();
-        }
-
-        private void BTN_DELETED_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string deleteQuery = "DELETE FROM db_infokost.tbl_data WHERE Id =" + textBoxID.Text;
-                koneksi.Open();
-                MySqlCommand command = new MySqlCommand(deleteQuery, koneksi);
-
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Admin Deleted");
-                }
-                else
-                {
-                    MessageBox.Show("Admin Not Deleted");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            koneksi.Close();
-        }
-
-        private void BTN_UPDATED_Click(object sender, EventArgs e)
-        {
-            string updateQuery = "UPDATE db_infokost.tbl_data SET Nama = '"+textBoxNameKost.Text+"', Alamat ='"+textBoxAlamat.Text+"', JenisKost ='"+ textBoxJenisKost.Text+"', KataKunci ='"+textBoxKataKunci.Text+"', Harga = "+int.Parse(textBoxHarga.Text)+" WHERE id="+int.Parse(textBoxID.Text);
-
-            koneksi.Open();
-            try
-            {
-                MySqlCommand command = new MySqlCommand(updateQuery, koneksi);
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Data Updated");
-                }
-                else
-                {
-                    MessageBox.Show("Data Not Updated");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            koneksi.Close();
         }
 
         private void BTN_Displays_Click(object sender, EventArgs e)
@@ -139,7 +82,7 @@ namespace Projek1_Vispro
         {
             try
             {
-                Form4_Load(null, null);
+                Menu_For_Users_Load(null, null);
             }
             catch (Exception ex)
             {
@@ -147,7 +90,7 @@ namespace Projek1_Vispro
             }
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+        private void Menu_For_Users_Load(object sender, EventArgs e)
         {
             try
             {
@@ -163,19 +106,22 @@ namespace Projek1_Vispro
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[0].Width = 30;
                 dataGridView1.Columns[0].HeaderText = "Id";
-                dataGridView1.Columns[1].Width = 150;
+                dataGridView1.Columns[1].Width = 100;
                 dataGridView1.Columns[1].HeaderText = "Nama";
                 dataGridView1.Columns[2].Width = 150;
                 dataGridView1.Columns[2].HeaderText = "Alamat";
-                dataGridView1.Columns[3].Width = 150;
+                dataGridView1.Columns[3].Width = 100;
                 dataGridView1.Columns[3].HeaderText = "Harga";
-                dataGridView1.Columns[4].Width = 150;
+                dataGridView1.Columns[4].Width = 100;
                 dataGridView1.Columns[4].HeaderText = "JenisKost";
                 dataGridView1.Columns[5].Width = 150;
                 dataGridView1.Columns[5].HeaderText = "KataKunci";
 
-                textBoxID.Clear();
+                searchData("");
+
+                textBox1.Clear();
                 textBoxNameKost.Clear();
+                textBoxID.Clear();
                 textBoxAlamat.Clear();
                 textBoxHarga.Clear();
                 textBoxJenisKost.Clear();

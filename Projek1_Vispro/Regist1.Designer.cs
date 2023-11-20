@@ -1,6 +1,6 @@
 ﻿namespace Projek1_Vispro
 {
-    partial class Regist
+    partial class Regist1
     {
         /// <summary>
         /// Required designer variable.
@@ -32,14 +32,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReport1 = new Projek1_Vispro.CrystalReport();
-            this.CrystalReport2 = new Projek1_Vispro.CrystalReport();
+            this.CrystalReport11 = new Projek1_Vispro.CrystalReport1();
+            this.BTN_BACK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(961, 31);
+            this.label1.Location = new System.Drawing.Point(1030, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 1;
@@ -47,16 +47,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1033, 28);
+            this.textBox1.Location = new System.Drawing.Point(1098, 20);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 26);
+            this.textBox1.Size = new System.Drawing.Size(184, 26);
             this.textBox1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1189, 23);
+            this.button1.Location = new System.Drawing.Point(1309, 16);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 37);
+            this.button1.Size = new System.Drawing.Size(87, 35);
             this.button1.TabIndex = 3;
             this.button1.Text = "View";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,22 +70,34 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CrystalReport1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1354, 736);
+            this.crystalReportViewer1.ReportSource = this.CrystalReport11;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1589, 1050);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // Regist
+            // BTN_BACK
+            // 
+            this.BTN_BACK.Location = new System.Drawing.Point(1490, 16);
+            this.BTN_BACK.Name = "BTN_BACK";
+            this.BTN_BACK.Size = new System.Drawing.Size(87, 35);
+            this.BTN_BACK.TabIndex = 4;
+            this.BTN_BACK.Text = "Back";
+            this.BTN_BACK.UseVisualStyleBackColor = true;
+            this.BTN_BACK.Click += new System.EventHandler(this.BTN_BACK_Click);
+            // 
+            // Regist1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 736);
+            this.ClientSize = new System.Drawing.Size(1589, 1050);
+            this.Controls.Add(this.BTN_BACK);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "Regist";
+            this.Name = "Regist1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Regist";
+            this.Text = "Regist1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,10 +106,10 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReport CrystalReport1;
-        private CrystalReport CrystalReport2;
+        private CrystalReport1 CrystalReport11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BTN_BACK;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projek1_Vispro
 {
-    public partial class Form2 : Form
+    public partial class FormLoginAdmin : Form
     {
-        public Form2()
+        public FormLoginAdmin()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace Projek1_Vispro
         {
             if (textBox1.Text == "Admin" && textBox2.Text == "12345")
             {
-                Form4 form2 = new Form4();
+                FrmMenuForAdmin form2 = new FrmMenuForAdmin();
                 form2.Show();
                 this.Hide();
             }

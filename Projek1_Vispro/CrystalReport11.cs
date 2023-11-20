@@ -16,14 +16,14 @@ namespace Projek1_Vispro {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public CrystalReport() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Projek1_Vispro {
         
         public override string FullResourceName {
             get {
-                return "Projek1_Vispro.CrystalReport.rpt";
+                return "Projek1_Vispro.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace Projek1_Vispro {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_My_Parameter {
+        public CrystalDecisions.Shared.IParameterField Parameter_InfoKost {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace Projek1_Vispro {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedCrystalReport() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace Projek1_Vispro {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport rpt = new CrystalReport();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }

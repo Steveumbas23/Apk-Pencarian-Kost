@@ -1,6 +1,6 @@
 ﻿namespace Projek1_Vispro
 {
-    partial class Form1
+    partial class FrmLandingPage
     {
         /// <summary>
         /// Required designer variable.

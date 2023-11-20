@@ -1,6 +1,6 @@
 ﻿namespace Projek1_Vispro
 {
-    partial class Form4
+    partial class FrmMenuForAdmin
     {
         /// <summary>
         /// Required designer variable.

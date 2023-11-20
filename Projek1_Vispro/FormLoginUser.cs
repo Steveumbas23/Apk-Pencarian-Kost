@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projek1_Vispro
 {
-    public partial class Form3 : Form
+    public partial class FormLoginUser : Form
     {
-        public Form3()
+        public FormLoginUser()
         {
             InitializeComponent();
         }

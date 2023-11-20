@@ -10,23 +10,23 @@ using System.Windows.Forms;
 
 namespace Projek1_Vispro
 {
-    public partial class Form1 : Form
+    public partial class FrmLandingPage : Form
     {
-        public Form1()
+        public FrmLandingPage()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form1 = new Form2();
+            FormLoginAdmin form1 = new FormLoginAdmin();
             form1.Show();
             this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 form1 = new Form3();
+            FormLoginUser form1 = new FormLoginUser();
             form1.Show();
             this.Hide();
         }
@@ -38,7 +38,7 @@ namespace Projek1_Vispro
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Regist form1 = new Regist();
+            Regist1 form1 = new Regist1();
             form1.Show();
             this.Hide();
         }
